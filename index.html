@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>My Apparel Store</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .section-header {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .product-card {
+        margin: 15px 0;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <a class="navbar-brand" href="index.html">My Apparel Store</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="menDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Men</a
+            >
+            <div class="dropdown-menu" aria-labelledby="menDropdown">
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('men-shirts')"
+                >Shirts</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('men-pants')"
+                >Pants</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('men-shoes')"
+                >Shoes</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="womenDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Women</a
+            >
+            <div class="dropdown-menu" aria-labelledby="womenDropdown">
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('women-shirts')"
+                >Shirts</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('women-pants')"
+                >Pants</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('women-shoes')"
+                >Shoes</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="kidsDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Kids</a
+            >
+            <div class="dropdown-menu" aria-labelledby="kidsDropdown">
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('kids-shirts')"
+                >Shirts</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('kids-pants')"
+                >Pants</a
+              >
+              <a
+                class="dropdown-item"
+                href="#"
+                onclick="showSection('kids-shoes')"
+                >Shoes</a
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showSection('contact')"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <p class="text-center my-4">
+        Join us in celebrating style, comfort, and quality.
+        <em>Happy shopping!</em>
+      </p>
+      <div class="row" id="mixed-apparel">
+        <div class="col-md-4" onclick="showSection('men-shirts')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2018/10/10/14/24/shirt-3737407_1280.jpg"
+              class="card-img-top"
+              alt="Men Shirt"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('kids-shoes')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2023/09/02/11/43/woman-8228723_1280.jpg"
+              class="card-img-top"
+              alt="Women shirt"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Shirt</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('women-pants')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2023/06/17/22/51/shoes-8070908_1280.jpg"
+              class="card-img-top"
+              alt="Women Sandals"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Sandals</h5>
+              <p class="card-text">$34.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('women-pants')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/09/19/21/35/fashion-2766725_1280.jpg"
+              class="card-img-top"
+              alt="Women Shirt"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Shirt</h5>
+              <p class="card-text">$24.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('women-pants')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/02/01/03/00/girl-4809433_1280.jpg"
+              class="card-img-top"
+              alt="Women Kurti"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Kurti</h5>
+              <p class="card-text">$17.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('women-pants')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/06/15/11/29/jeans-2405037_1280.jpg"
+              class="card-img-top"
+              alt="Women Pant"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pant</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('kids-shoes')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/05/22/07/46/model-5204225_1280.jpg"
+              class="card-img-top"
+              alt="Women's Saree"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Saree</h5>
+              <p class="card-text">$99.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('women-pants')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2021/04/12/21/46/girl-6174060_1280.jpg"
+              class="card-img-top"
+              alt="Kids Shirt"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids Dress</h5>
+              <p class="card-text">$25.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('men-shirts')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/05/29/21/00/shoes-2354910_1280.jpg"
+              class="card-img-top"
+              alt="Women Pant"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pant</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('kids-shoes')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2022/05/31/09/37/toddler-7233172_1280.jpg"
+              alt="Kids shirt"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids Shirt</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('kids-shoes')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2018/12/05/13/41/woman-3857758_1280.jpg"
+              class="card-img-top"
+              alt="Women's Shoes"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Shoes</h5>
+              <p class="card-text">$17.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" onclick="showSection('men-shirts')">
+          <div class="card product-card">
+            <img
+              src="https://cdn.pixabay.com/photo/2019/08/11/11/28/man-4398724_1280.jpg"
+              class="card-img-top"
+              alt="Men sutis and Blazzer"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's sutis and Blazzer</h5>
+              <p class="card-text">$69.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Individual Sections -->
+      <div class="section-header hidden" id="men-shirts">
+        <h2>Men's Shirts</h2>
+      </div>
+      <div class="row hidden" id="men-shirts-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28839059/pexels-photo-28839059/free-photo-of-trendy-male-portrait-with-stylish-attire.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28452460/pexels-photo-28452460/free-photo-of-stylish-young-man-relaxing-against-urban-wall.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28572596/pexels-photo-28572596/free-photo-of-stylish-man-posing-in-decorative-frame-outdoors.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28773944/pexels-photo-28773944/free-photo-of-black-and-white-portrait-of-a-young-man-in-shirt.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$25.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/20715516/pexels-photo-20715516/free-photo-of-african-man-posing-in-denim-outfit.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27370421/pexels-photo-27370421/free-photo-of-man-standing-on-a-beach-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$99.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27065169/pexels-photo-27065169/free-photo-of-a-bearded-man-in-a-patterned-shirt-and-a-hat-sitting-on-a-motor-scooter.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/19119918/pexels-photo-19119918/free-photo-of-portrait-of-man-wearing-white-shirt-on-a-beach.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27453395/pexels-photo-27453395/free-photo-of-smiling-man-in-shirt-posing-on-rooftop.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shirt</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="men-pants">
+        <h2>Men's pants</h2>
+      </div>
+      <div class="row hidden" id="men-pants-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28773349/pexels-photo-28773349/free-photo-of-man-in-blue-sweater-with-umbrella-on-city-street.png?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28831289/pexels-photo-28831289/free-photo-of-stylish-man-posing-against-wooden-wall.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28226723/pexels-photo-28226723/free-photo-of-a-shirtless-man-sitting-on-a-chair-in-a-room.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27940207/pexels-photo-27940207/free-photo-of-model-in-a-black-sweatshirt-and-beige-pants-sitting-on-a-fountain.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27870942/pexels-photo-27870942/free-photo-of-man-standing-in-black-shirt.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28572599/pexels-photo-28572599/free-photo-of-stylish-man-leaning-against-historic-building.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men pant 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's pants</h5>
+              <p class="card-text">$299.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="men-shoes">
+        <h2>Men's shoes</h2>
+      </div>
+      <div class="row hidden" id="men-shoes-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$239.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/298864/pexels-photo-298864.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$129.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/19882183/pexels-photo-19882183/free-photo-of-elegant-man-wearing-socks-to-expensive-shoes.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/18434532/pexels-photo-18434532/free-photo-of-man-standing-on-a-footbridge-with-a-smart-phone-and-digital-photo-camera-in-his-hands.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/1639729/pexels-photo-1639729.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$24.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/1153838/pexels-photo-1153838.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Men shoes 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Shoes</h5>
+              <p class="card-text">$219.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="women-shirts">
+        <h2>Women's shirts</h2>
+      </div>
+      <div class="row hidden" id="women-shirts-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/21207686/pexels-photo-21207686/free-photo-of-woman-standing-in-shirt-with-tie-and-with-seagulls-flying-around.png?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$179.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27310016/pexels-photo-27310016/free-photo-of-brunette-woman-wearing-elegant-clothes-in-a-studio.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$69.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27496332/pexels-photo-27496332/free-photo-of-portrait-of-woman-in-shirt-with-tie.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$109.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/21192643/pexels-photo-21192643/free-photo-of-woman-standing-with-shirt.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/18391175/pexels-photo-18391175/free-photo-of-young-woman-in-a-suit-standing-on-the-pavement-in-city.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/20899154/pexels-photo-20899154/free-photo-of-smiling-model-tying-her-hair-wearing-a-flannel-shirt-and-t-shirt.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women Shirt 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's shirts</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="women-pants">
+        <h2>Women's Pants</h2>
+      </div>
+      <div class="row hidden" id="women-pants-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/9725199/pexels-photo-9725199.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$34.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27919181/pexels-photo-27919181/free-photo-of-portrait-of-a-woman-in-a-street.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$24.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27832785/pexels-photo-27832785/free-photo-of-photo-of-a-fashionable-woman-wearing-a-conical-hat.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$37.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28350521/pexels-photo-28350521/free-photo-of-perfil-pg.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$31.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27880013/pexels-photo-27880013/free-photo-of-woman-standing-in-t-shirt-and-pants-and-with-gate-with-arch-behind.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$134.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28751259/pexels-photo-28751259/free-photo-of-stylish-woman-walking-by-historic-architecture.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Pants</h5>
+              <p class="card-text">$304.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="women-shoes">
+        <h2>women's Footware</h2>
+      </div>
+      <div class="row hidden" id="women-shoes-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/2285500/pexels-photo-2285500.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women shoes 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">women's Footware</h5>
+              <p class="card-text">$239.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women shoes 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">women's Footware</h5>
+              <p class="card-text">$129.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27777525/pexels-photo-27777525/free-photo-of-woman-posing-on-a-bench.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women shoes 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">women's Footware</h5>
+              <p class="card-text">$599.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/27169831/pexels-photo-27169831/free-photo-of-redhead-model-in-over-the-knee-boots.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="women shoes 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Footware</h5>
+              <p class="card-text">$1999.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/21908847/pexels-photo-21908847/free-photo-of-woman-wearing-socks.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women shoes 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Footware</h5>
+              <p class="card-text">$24.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/22484331/pexels-photo-22484331/free-photo-of-a-woman-with-sunglasses.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Women shoes 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Footware</h5>
+              <p class="card-text">$29.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="kids-shirts">
+        <h2>Kids' shirts</h2>
+      </div>
+      <div class="row hidden" id="kids-shirts-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/25158812/pexels-photo-25158812/free-photo-of-boy-standing-in-an-orange-room.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/25158804/pexels-photo-25158804/free-photo-of-boy-standing-in-an-orange-room.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/19230313/pexels-photo-19230313/free-photo-of-a-little-boy-standing-outside-and-showing-thumbs-up.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/19230190/pexels-photo-19230190/free-photo-of-a-little-boy-standing-outside-and-showing-thumbs-up.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/16951673/pexels-photo-16951673/free-photo-of-a-little-boy-in-an-elegant-outfit-standing-outdoors.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/12887104/pexels-photo-12887104.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shirt 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Shirts</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="kids-pants">
+        <h2>Kids' pants</h2>
+      </div>
+      <div class="row hidden" id="kids-pants-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/10508388/pexels-photo-10508388.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/10557483/pexels-photo-10557483.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$139.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/9654743/pexels-photo-9654743.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$99.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/9511316/pexels-photo-9511316.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$59.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/9428713/pexels-photo-9428713.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/8909717/pexels-photo-8909717.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Pant 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Pant</h5>
+              <p class="card-text">$19.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header hidden" id="kids-shoes">
+        <h2>Kids' Shoes</h2>
+      </div>
+      <div class="row hidden" id="kids-shoes-row">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/28731591/pexels-photo-28731591/free-photo-of-child-s-feet-in-sneakers-sitting-on-wooden-bench.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$189.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/15844902/pexels-photo-15844902/free-photo-of-photo-of-a-blue-baby-shoes-made-on-an-orange-background.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$49.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/19775532/pexels-photo-19775532/free-photo-of-child-wearing-rollerblades.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$99.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/7574359/pexels-photo-7574359.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$89.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/9511310/pexels-photo-9511310.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 5"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$39.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="https://images.pexels.com/photos/8084238/pexels-photo-8084238.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="card-img-top"
+              alt="Kids Shoes 6"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kids' Sneakers</h5>
+              <p class="card-text">$9.99</p>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+              <button class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4 hidden" id="contact">
+        <p class="text-center">
+          If you have any questions, feel free to reach out!
+        </p>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function showSection(sectionId) {
+        // Hide all sections
+        document
+          .querySelectorAll(".section-header, .row")
+          .forEach(function (section) {
+            section.classList.add("hidden");
+          });
+
+        // Show the selected section
+        document.getElementById(sectionId).classList.remove("hidden");
+        document.getElementById(sectionId + "-row").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
